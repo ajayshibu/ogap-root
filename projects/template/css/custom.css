@@ -1,0 +1,30 @@
+#content-highlight
+{
+	background-color:black;
+	background-image:url('img/gaming.jpg');
+	background-size:cover;
+	height:250px;
+}
+
+.content-highlight
+{
+	background-color:black;
+	margin-top:2%;
+	height:70%;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	text-indent:4px;
+	font-size:13px;
+	border-radius:3%;
+	opacity:0.8;
+	color:silver;
+}
+
+.divider
+{
+	background-image:url('img/divider.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:85px;
+}
