@@ -11,13 +11,6 @@
 
 	define('__ROOT__',dirname(__FILE__));
 	require_once(__ROOT__.'/credentials.php');
-	include('Net/SSH2.php');
-
-	$ssh=new Net_SSH2('ogap.tk');
-	if (!$ssh->login('root', '$rootpasswd')) {
-    							exit('Login Failed');
-						}
-
 	$commands = array(
 		'echo $PWD',
 		'whoami',
@@ -27,6 +20,12 @@
 		'git submodule update',
 		'git submodule status',
 	);
+	
+	include(Net/SSH2.php);
+	$ssh=new Net_SSH2('ogap.tk');
+	if(!$ssh->login('ogap-root', '$ogap-root-passwd')) {
+    exit('Login Failed');
+}
 
 	// Run the commands for output
 	$output = '';
