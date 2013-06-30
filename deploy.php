@@ -11,10 +11,8 @@
 
 	define('__ROOT__',dirname(__FILE__));
 	require_once(__ROOT__.'/credentials.php');
-	$path = '/var/www/ogap-root';
+	
 	$commands = array(
-		'echo $PWD',
-		'cd '.$path,
 		'echo $PWD',
 		'whoami',
 		'git pull',
