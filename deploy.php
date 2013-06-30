@@ -13,7 +13,8 @@
 	require_once(__ROOT__.'/credentials.php');
 	$path = '/var/www/ogap-root';
 	$commands = array(
-		'cd /var/www/ogap-root',
+		'echo $PWD',
+		'cd '.$path,
 		'echo $PWD',
 		'whoami',
 		'git pull',
