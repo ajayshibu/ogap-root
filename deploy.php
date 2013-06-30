@@ -20,10 +20,10 @@
 		'git submodule update',
 		'git submodule status',
 	);
-	
-	include(Net/SSH2.php);
-	$ssh=new Net_SSH2('ogap.tk');
-	if(!$ssh->login('ogap-root', '$ogap-root-passwd')) {
+	set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib');
+	include('Net/SSH2.php');
+	$ssh = new Net_SSH2('ogap.tk');
+	if(!$ssh->login('ogap-root',$ogap_root_passwd)) {
     exit('Login Failed');
 }
 
