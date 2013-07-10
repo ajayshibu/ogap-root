@@ -10,8 +10,7 @@
 	// The commands
 
 	define('__ROOT__',dirname(__FILE__));
-	require_once(__ROOT__.'/credentials.php');
-	
+		
 	$commands = array(
 		'echo $PWD',
 		'whoami',
@@ -23,16 +22,13 @@
 	);
 	set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib');
 	include('Net/SSH2.php');
-	$ssh = new Net_SSH2('ogap.tk');
-	if(!$ssh->login('ogap-root',$ogap_root_passwd)) {
-    exit('Login Failed');
-}
+	
 
 	// Run the commands for output
 	$output = '';
 	foreach($commands AS $command){
 		// Run it
-		$tmp = $ssh->exec($command);
+		$tmp = exec($command);
 		// Output
 		$output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
 		$output .= htmlentities(trim($tmp)) . "\n";
